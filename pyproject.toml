@@ -1,18 +1,28 @@
 [build-system]
-requires = ["setuptools", "setuptools-scm"]
+requires = ["setuptools", "setuptools-scm[toml]"]
 build-backend = "setuptools.build_meta"
+
+[tool.setuptools_scm]
+write_to = "pkg_cache/_version.py"
 
 [project]
 name = "pkg_cache"
-description = ""
+description = "Package manager cache for systems and languages"
+readme = "README.rst"
+requires-python = ">=3.10"
 classifiers = [
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
 ]
+dynamic =["version"]
 dependencies = [
-    "fastapi",
-    "httpx",
-    "sqlalchemy",
-    "tomli"
+    "fastapi >= 0.83.0",
+    "httpx >= 0.23.0",
+    "sqlalchemy >= 1.4.41",
+    "tomli >= 2.0.1",
+    "aiofiles >= 22.1.0"
 ]
+
+[tool.setuptools.packages.find]
+include = ["pkg_cache*"]
