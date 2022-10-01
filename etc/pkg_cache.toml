@@ -1,0 +1,33 @@
+# This is an exemplary configuration file for pkg_cache and may be used directly.
+
+[database]
+url = "sqlite:///var/data/pkg_cache/index.db"
+
+[storage]
+engine = "file_system"
+
+[storage.file_system]
+path = "/var/data/pkg_cache"
+
+[pypi]
+backend_index = [
+    "https://mirrors.aliyun.com/pypi/simple/",
+    "https://pypi.python.org/simple/"
+]
+
+[apt.debian]
+backend_index = [
+
+]
+
+[apt.ubuntu]
+backend_index = [
+
+]
+
+[cache]
+max_size = "100G"
+ttl = "30d"
+
+[logging]
+level = "INFO"
